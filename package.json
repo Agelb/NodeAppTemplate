@@ -1,0 +1,52 @@
+{
+  "name": "nodeapptemplate",
+  "version": "1.0.0",
+  "description": "This repo serves as template to build functioning, deployable node js apps running on express. ",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "pretest": "",
+    "prepublish": "prettier --check .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agelb/NodeAppTemplate.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Template",
+    "Express"
+  ],
+  "author": "Austin Gelber",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Agelb/NodeAppTemplate/issues"
+  },
+  "homepage": "https://github.com/Agelb/NodeAppTemplate#readme",
+  "dependencies": {
+    "@types/node": "^14.0.27",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "eslint": "^7.6.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
